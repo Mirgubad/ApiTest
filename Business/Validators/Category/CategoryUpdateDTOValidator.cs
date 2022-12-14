@@ -1,0 +1,20 @@
+﻿using Business.DTOs.Category.Request;
+using FluentValidation;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Business.Validators.Category
+{
+    public class CategoryUpdateDTOValidator : AbstractValidator<CategoryUpdateDTO>
+    {
+        public CategoryUpdateDTOValidator()
+        {
+            RuleFor(x => x.Title)
+                .MinimumLength(3)
+                .WithMessage("Name length cannot be less than 3");
+        }
+    }
+}
