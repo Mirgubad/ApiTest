@@ -87,13 +87,13 @@ namespace Business.Services.Implementation
             return response;
         }
 
-        public async Task<Response<CategoryResponseDTO>> GetAllAsync()
+        public async Task<Response<CategoryResponseDTO>> GetAllAsync(string? title)
         {
             var response = new Response<CategoryResponseDTO>
             {
                 Data = new CategoryResponseDTO
                 {
-                    Categories = await _categoryRepository.GetAllAsync()
+                    Categories = await _categoryRepository.FilterByName(title)
                 }
             };
             return response;

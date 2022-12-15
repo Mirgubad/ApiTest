@@ -9,6 +9,8 @@ namespace Business.DTOs.Category.Response
     public class CategoryResponseDTO
     {
         public List<Core.Entities.Category> Categories { get; set; }
+      
+
 
     }
 }

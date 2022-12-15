@@ -22,9 +22,9 @@ namespace Presentation.Controllers
         /// <returns></returns> 
         #endregion
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll(string? title)
         {
-            return Ok(await _categoryService.GetAllAsync());
+            return Ok(await _categoryService.GetAllAsync(title));
         }
 
         #region Documentation
@@ -38,18 +38,6 @@ namespace Presentation.Controllers
         public async Task<IActionResult> Get(int id)
         {
             return Ok(await _categoryService.GetAsync(id));
-        }
-        #region Documentation
-        /// <summary>
-        /// Search by name
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        #endregion
-        [HttpGet("filterbyname")]
-        public async Task<IActionResult> FilterByName(string? name)
-        {
-            return Ok(await _categoryService.FilterByName(name));
         }
 
         #region Documentation

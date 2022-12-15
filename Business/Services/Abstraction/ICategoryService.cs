@@ -11,7 +11,7 @@ namespace Business.Services.Abstraction
 {
     public interface ICategoryService
     {
-        Task<Response<CategoryResponseDTO>> GetAllAsync();
+        Task<Response<CategoryResponseDTO>> GetAllAsync(string? title);
         Task<Response<CategoryItemResponseDTO>> GetAsync(int id);
         Task<Response<CategoryResponseDTO>> FilterByName(string? name);
         Task<Response> CreateAsync(CategoryCreateDTO model);
